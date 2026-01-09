@@ -6,10 +6,1957 @@
     <title>أكاديمية ملهم التعليمية - تحفة تعليمية ملهمة</title>
     <meta name="description" content="أكاديمية ملهم التعليمية - تجربة تعليمية استثنائية تجمع بين الإبداع والتميز" />
     
+    <link hre<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أكاديمية ملهم التعليمية - فتح باب التسجيل للفصل الدراسي الكامل</title>
+    <meta name="description" content="أكاديمية ملهم التعليمية تفتح باب التسجيل للفصل الدراسي الكامل - تعليم عن بعد وتعليم مباشر حضوري" />
+    
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
+    <style>
+        :root {
+            --primary: #6a2df3;
+            --primary-dark: #4b1fad;
+            --primary-light: #8a5cf5;
+            --secondary: #ff8a3c;
+            --secondary-light: #ffb37c;
+            --accent: #22b8aa;
+            --accent-light: #5ce0d2;
+            --gold: #ffd700;
+            --gold-light: #fff9c4;
+            --deep-space: #0f0c29;
+            --cosmic-purple: #302b63;
+            --stardust: #ffffff;
+            --nebula-blue: #00b4d8;
+            
+            --purple-gradient: linear-gradient(135deg, #6a2df3, #8a5cf5, #c084fc);
+            --orange-gradient: linear-gradient(135deg, #ff8a3c, #ffb37c, #ffd699);
+            --teal-gradient: linear-gradient(135deg, #22b8aa, #5ce0d2, #99f6e4);
+            --gold-gradient: linear-gradient(135deg, #ffd700, #ffed4e, #fff9c4);
+            --cosmic-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            --galaxy-gradient: radial-gradient(circle at 50% 50%, #6a2df3, #302b63, #0f0c29);
+            
+            --bg-soft: #f7f4ff;
+            --bg-deep: #1a1034;
+            --text-main: #15162b;
+            --text-light: #5d6680;
+            --white: #ffffff;
+            
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --radius-sm: 12px;
+            
+            --shadow-soft: 0 12px 30px rgba(16, 10, 60, 0.15);
+            --shadow-medium: 0 16px 40px rgba(16, 10, 60, 0.22);
+            --shadow-strong: 0 20px 50px rgba(16, 10, 60, 0.3);
+            --shadow-glow: 0 0 30px rgba(106, 45, 243, 0.4);
+            --shadow-gold: 0 0 25px rgba(255, 215, 0, 0.5);
+            
+            --transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-slow: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition-bounce: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Cairo', 'El Messiri', sans-serif;
+            background: var(--cosmic-gradient);
+            color: var(--stardust);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(106, 45, 243, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 138, 60, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(34, 184, 170, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* النجوم المتحركة */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* تأثير الجسيمات */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            width: min(1400px, 95%);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ===== الهيدر الأسطوري ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(15, 12, 41, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            padding: 0.8rem 0;
+        }
+
+        header.scrolled {
+            background: rgba(15, 12, 41, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 0.5rem 0;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .logo-wrap:hover {
+            transform: translateY(-3px);
+        }
+
+        .logo-orb {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--purple-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: var(--shadow-glow);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .logo-orb::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: var(--purple-gradient);
+            filter: blur(15px);
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .logo-orb img {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-family: 'El Messiri', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .logo-sub {
+            font-size: 0.85rem;
+            color: var(--accent-light);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .nav-link {
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--purple-gradient);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover::before {
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-cta {
+            background: var(--orange-gradient);
+            color: var(--deep-space);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== الهيرو الملحمي ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0 4rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(106, 45, 243, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 138, 60, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(34, 184, 170, 0.15) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 2rem;
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 138, 60, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(255, 138, 60, 0.6); }
+        }
+
+        .hero h1 {
+            font-family: 'El Messiri', serif;
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, #ffd700, #ff8a3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            max-width: 90%;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--accent-light);
+            margin-top: 0.5rem;
+        }
+
+        .hero-orb {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floating-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            animation: float-3d 8s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes float-3d {
+            0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+            33% { transform: translateY(-20px) rotateX(5deg) rotateY(5deg); }
+            66% { transform: translateY(-10px) rotateX(-5deg) rotateY(-5deg); }
+        }
+
+        .floating-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        }
+
+        /* ===== الأزرار السحرية ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition-bounce);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: var(--transition);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--orange-gradient);
+            color: var(--deep-space);
+            box-shadow: 
+                0 10px 30px rgba(255, 138, 60, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(255, 138, 60, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .btn-glow {
+            background: var(--purple-gradient);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 
+                0 0 40px rgba(106, 45, 243, 0.8),
+                var(--shadow-glow);
+        }
+
+        /* ===== الأقسام السحرية ===== */
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--purple-gradient);
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .section-title {
+            font-family: 'El Messiri', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gold-gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== البطاقات ثلاثية الأبعاد ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--purple-gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-20px) rotateX(5deg);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                var(--shadow-glow);
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: var(--purple-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+            box-shadow: var(--shadow-glow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotateY(180deg);
+            background: var(--gold-gradient);
+        }
+
+        /* ===== العروض المتلألئة ===== */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+        }
+
+        .offer-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--purple-gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                var(--shadow-glow);
+        }
+
+        .offer-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .offer-card.featured {
+            border: 2px solid var(--gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .offer-card.featured::after {
+            content: '✨ الأفضل';
+            position: absolute;
+            top: 20px;
+            left: -30px;
+            background: var(--gold-gradient);
+            color: var(--deep-space);
+            padding: 0.5rem 2rem;
+            font-weight: 700;
+            transform: rotate(-45deg);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ===== إضافة أنماط جديدة للفصل بين النظامين ===== */
+        .education-type-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .online-badge {
+            background: var(--purple-gradient);
+            color: white;
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .onsite-badge {
+            background: var(--orange-gradient);
+            color: var(--deep-space);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .pricing-table th {
+            background: rgba(106, 45, 243, 0.2);
+            padding: 1.2rem;
+            text-align: right;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .pricing-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .pricing-table tr:hover {
+            background: rgba(106, 45, 243, 0.1);
+        }
+        
+        .price-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(34, 184, 170, 0.2);
+            border-radius: 6px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .material-list {
+            list-style: none;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-sm);
+            margin: 1rem 0;
+        }
+        
+        .material-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .material-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .material-list i {
+            color: var(--accent);
+            margin-left: 0.5rem;
+        }
+        
+        /* فاصل بين النظامين */
+        .section-divider {
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+        
+        .divider-text {
+            display: inline-block;
+            background: var(--cosmic-gradient);
+            padding: 0.5rem 2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== الفريق النجمي ===== */
+        .team-showcase {
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .team-image-container {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-medium);
+            text-align: center;
+            margin-bottom: 3rem;
+            transition: var(--transition);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-image-container:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .team-image {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .team-caption {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .team-description {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            text-align: center;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+        }
+
+        /* ===== الجداول ===== */
+        .schedules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .schedule-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            transition: var(--transition);
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .schedule-card table {
+            width: 100%;
+            border-collapse: collapse;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .schedule-card th {
+            background: rgba(106, 45, 243, 0.2);
+            padding: 1rem;
+            text-align: right;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .schedule-card td {
+            padding: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===== نموذج التسجيل ===== */
+        .form-wrapper {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(106, 45, 243, 0.3);
+        }
+
+        .form-footer {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .note-transfer {
+            background: rgba(106, 45, 243, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border-right: 4px solid var(--primary);
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* ===== الأسئلة الشائعة ===== */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+        }
+
+        .faq-question i {
+            color: var(--accent);
+            margin-top: 0.3rem;
+        }
+
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* ===== الفوتر الكوني ===== */
+        footer {
+            background: var(--galaxy-gradient);
+            padding: 6rem 0 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(106, 45, 243, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 138, 60, 0.15) 0%, transparent 50%);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: var(--purple-gradient);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* ===== التأثيرات الخاصة ===== */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: var(--purple-gradient);
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.1;
+            animation: float-random 20s infinite linear;
+        }
+
+        @keyframes float-random {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, 100px) rotate(90deg); }
+            50% { transform: translate(50px, 200px) rotate(180deg); }
+            75% { transform: translate(-100px, 100px) rotate(270deg); }
+        }
+
+        /* ===== الوسائط المتجاوبة ===== */
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .features-grid,
+            .offers-grid,
+            .schedules-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .form-footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- النجوم المتحركة -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- تأثير الجسيمات -->
+    <div id="particles-js"></div>
+    
+    <!-- العناصر العائمة -->
+    <div class="floating-elements">
+        <div class="floating-element" style="width: 200px; height: 200px; top: 10%; left: 10%;"></div>
+        <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 80%;"></div>
+        <div class="floating-element" style="width: 100px; height: 100px; top: 80%; left: 20%;"></div>
+    </div>
+
+    <!-- الهيدر -->
+    <header id="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo-wrap">
+                    <div class="logo-orb">
+                        <img src="https://b.top4top.io/p_3619a8p161.png" alt="شعار أكاديمية ملهم التعليمية">
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-main">أكاديمية ملهم</div>
+                        <div class="logo-sub">Mulhim Educational Academy</div>
+                    </div>
+                </div>
+                
+                <nav class="nav-links">
+                    <a href="#about" class="nav-link">عن الأكاديمية</a>
+                    <a href="#online" class="nav-link">التعليم عن بعد</a>
+                    <a href="#onsite" class="nav-link">التعليم المباشر</a>
+                    <a href="#register" class="nav-link">تسجيل طالب</a>
+                    <a href="#register" class="nav-link nav-cta">سجل الآن</a>
+                </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div data-aos="fade-right">
+                    <div class="hero-badge">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>فتح باب التسجيل للفصل الدراسي الكامل</span>
+                    </div>
+                    
+                    <h1>ملهم… أكاديمية تقدم تعليمًا منظمًا، محتوى واضح، وأسعارًا مدروسة</h1>
+                    
+                    <p>تُعلن أكاديمية مُلهم التعليمية عن بدء التسجيل للفصل الدراسي الكامل بنظام التعليم الإلكتروني، ضمن بيئة تعليمية منظمة، ومحتوى مُعتمد، ومتابعة مستمرة تهدف إلى رفع مستوى التحصيل وبناء فهمٍ راسخ لدى الطلبة.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">+200</span>
+                            <span class="stat-label">طالب مستفيد</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">معلم متميز</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">رضا أولياء الأمور</span>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="#register" class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i>
+                            سجل الآن للفصل الدراسي الكامل
+                        </a>
+                        <a href="#online" class="btn btn-secondary">
+                            <i class="fas fa-laptop"></i>
+                            استعرض باقات التعليم عن بعد
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-orb" data-aos="fade-left">
+                    <div class="floating-card">
+                        <span style="color: #ffcf87; font-weight: 600; margin-bottom: 1rem; display: block;">
+                            <i class="fas fa-star"></i> ملهم في سطور
+                        </span>
+                        <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.4rem;">تعليم منظم، محتوى واضح، وأسعار مدروسة</h3>
+                        <ul style="list-style: none; color: rgba(255, 255, 255, 0.9);">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                <i class="fas fa-check" style="color: var(--accent); margin-left: 0.5rem;"></i>
+                                نظام التعليم عن بعد - فصل دراسي كامل
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                <i class="fas fa-check" style="color: var(--accent); margin-left: 0.5rem;"></i>
+                                نظام التعليم المباشر - حضوري داخل القاعات
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                <i class="fas fa-check" style="color: var(--accent); margin-left: 0.5rem;"></i>
+                                محتوى معتمد ومتابعة مستمرة
+                            </li>
+                            <li style="padding: 0.5rem 0;">
+                                <i class="fas fa-check" style="color: var(--accent); margin-left: 0.5rem;"></i>
+                                الأولوية للمسجلين مبكرًا لضمان المقاعد
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- عن الأكاديمية -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">رؤيتنا ورسالتنا</div>
+                <h2 class="section-title">عن أكاديمية ملهم التعليمية</h2>
+                <p class="section-subtitle">تعليم مُنظم، محتوى واضح، وأسعار مدروسة تضع مصلحة الطالب في المقام الأول</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 3rem;">
+                    نؤمن بأن كل طالب يحمل بداخله عالماً من الإمكانات، ومهمتنا هي مساعدته على اكتشاف هذا العالم وصنع مستقبله من خلال التعليم المنظم والمركز
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up">
+                        <div class="feature-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 1rem;">معلم ملهم</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8);">معلم ذو خبرة، حاضر ذهنيًا ومهنيًا، ويمتلك أدوات شرح عصرية.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 1rem;">طالب جاد</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8);">يعرف ماذا يريد، ويحصل على مسار يناسب مستواه وأهدافه.</p>
+                    </div>
+                    
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 1rem;">تنظيم احترافي</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8);">جداول واضحة، أسعار معلنة، وباقات مدروسة توازن بين الجودة والتكلفة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التعليم عن بعد - الفصل الدراسي الكامل -->
+    <section id="online" style="background: rgba(15, 12, 41, 0.5);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="education-type-badge online-badge">تعليم عن بعد | فصل دراسي كامل</span>
+                <h2 class="section-title">نظام التعليم الإلكتروني</h2>
+                <p class="section-subtitle">بيئة تعليمية منظمة، ومحتوى مُعتمد، ومتابعة مستمرة تهدف إلى رفع مستوى التحصيل وبناء فهمٍ راسخ لدى الطلبة</p>
+            </div>
+            
+            <div class="offers-grid">
+                <!-- الصفوف من الخامس إلى الثامن -->
+                <div class="offer-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.6rem;">الصفوف من الخامس إلى الثامن</h3>
+                    
+                    <div class="price" style="font-size: 1.8rem; font-weight: 800; color: var(--primary-light); margin: 1.5rem 0;">
+                        <span style="font-size: 2rem;">14 ريال</span>
+                        <span style="font-size: 1rem; color: rgba(255,255,255,0.7); display: block;">للمادة الواحدة</span>
+                        <span style="font-size: 1.5rem; color: var(--gold);">باقة أربع مواد: 45 ريال</span>
+                    </div>
+                    
+                    <div class="material-list">
+                        <h4 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">المواد المتاحة:</h4>
+                        <li><i class="fas fa-book"></i> اللغة العربية</li>
+                        <li><i class="fas fa-language"></i> اللغة الإنجليزية</li>
+                        <li><i class="fas fa-calculator"></i> الرياضيات</li>
+                        <li><i class="fas fa-flask"></i> العلوم</li>
+                    </div>
+                    
+                    <a href="#register" class="btn btn-glow" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+                        <i class="fas fa-rocket"></i>
+                        سجل في باقة التعليم عن بعد
+                    </a>
+                </div>
+
+                <!-- الصفوف من التاسع إلى الحادي عشر -->
+                <div class="offer-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.6rem;">الصفوف من التاسع إلى الحادي عشر</h3>
+                    
+                    <div class="price" style="font-size: 1.8rem; font-weight: 800; color: var(--primary-light); margin: 1.5rem 0;">
+                        <span style="font-size: 2rem;">18 ريال</span>
+                        <span style="font-size: 1rem; color: rgba(255,255,255,0.7); display: block;">للمادة الواحدة</span>
+                        <span style="font-size: 1.5rem; color: var(--gold);">باقة أربع مواد: 65 ريال</span>
+                        <span style="font-size: 1.5rem; color: var(--accent);">باقة جميع المواد: 90 ريال</span>
+                    </div>
+                    
+                    <div class="material-list">
+                        <h4 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">المواد المتاحة:</h4>
+                        <li><i class="fas fa-book"></i> اللغة العربية</li>
+                        <li><i class="fas fa-language"></i> اللغة الإنجليزية</li>
+                        <li><i class="fas fa-calculator"></i> الرياضيات</li>
+                        <li><i class="fas fa-atom"></i> الفيزياء</li>
+                        <li><i class="fas fa-flask"></i> الكيمياء</li>
+                        <li><i class="fas fa-dna"></i> الأحياء</li>
+                    </div>
+                    
+                    <a href="#register" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+                        <i class="fas fa-crown"></i>
+                        سجل في الباقة الشاملة
+                    </a>
+                </div>
+
+                <!-- الصف الثاني عشر -->
+                <div class="offer-card" data-aos="fade-up" data-aos-delay="300">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.6rem;">الصف الثاني عشر</h3>
+                    
+                    <div class="price" style="font-size: 1.8rem; font-weight: 800; color: var(--primary-light); margin: 1.5rem 0;">
+                        <span style="font-size: 2rem;">20 ريال</span>
+                        <span style="font-size: 1rem; color: rgba(255,255,255,0.7); display: block;">للمادة الواحدة</span>
+                        <span style="font-size: 1.5rem; color: var(--gold);">باقة أربع مواد: 70 ريال</span>
+                        <span style="font-size: 1.5rem; color: var(--accent);">باقة جميع المواد: 100 ريال</span>
+                    </div>
+                    
+                    <div class="material-list">
+                        <h4 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">المواد المتاحة:</h4>
+                        <li><i class="fas fa-book"></i> اللغة العربية</li>
+                        <li><i class="fas fa-language"></i> اللغة الإنجليزية</li>
+                        <li><i class="fas fa-calculator"></i> الرياضيات</li>
+                        <li><i class="fas fa-atom"></i> الفيزياء</li>
+                        <li><i class="fas fa-flask"></i> الكيمياء</li>
+                        <li><i class="fas fa-dna"></i> الأحياء</li>
+                    </div>
+                    
+                    <a href="#register" class="btn btn-glow" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+                        <i class="fas fa-graduation-cap"></i>
+                        سجل لمرحلة التخرج
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فاصل بين النظامين -->
+    <div class="section-divider">
+        <span class="divider-text">أو اختر نظام التعليم المباشر</span>
+    </div>
+
+    <!-- التعليم المباشر الحضوري -->
+    <section id="onsite">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="education-type-badge onsite-badge">التعليم المباشر – حضوري داخل القاعات</span>
+                <h2 class="section-title">التعليم الحضوري المباشر</h2>
+                <p class="section-subtitle">بيئة تعليمية منظمة تركز على الفهم العميق، والانضباط الأكاديمي، والمتابعة المستمرة لتحقيق أفضل النتائج</p>
+            </div>
+            
+            <div class="offers-grid">
+                <!-- الصفوف من الخامس إلى الثامن -->
+                <div class="offer-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.6rem;">الصفوف من الخامس إلى الثامن</h3>
+                    
+                    <div class="price" style="font-size: 1.8rem; font-weight: 800; color: var(--secondary); margin: 1.5rem 0;">
+                        <span style="font-size: 2rem;">40 ريال</span>
+                        <span style="font-size: 1rem; color: rgba(255,255,255,0.7); display: block;">سعر المادة الواحدة</span>
+                        <span style="font-size: 1.5rem; color: var(--gold);">باقة 3 مواد: 100 ريال</span>
+                    </div>
+                    
+                    <div class="material-list">
+                        <h4 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">المواد المتاحة:</h4>
+                        <li><i class="fas fa-language"></i> اللغة الإنجليزية</li>
+                        <li><i class="fas fa-calculator"></i> الرياضيات</li>
+                        <li><i class="fas fa-book"></i> اللغة العربية</li>
+                    </div>
+                    
+                    <div style="background: rgba(255, 138, 60, 0.1); padding: 1rem; border-radius: var(--radius-sm); margin: 1rem 0; border-right: 3px solid var(--secondary);">
+                        <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-left: 0.5rem;"></i>
+                        <strong>المقر:</strong> مدرسة سوار العلم الخاصة
+                    </div>
+                    
+                    <a href="#register" class="btn btn-glow" style="width: 100%; justify-content: center; margin-top: 1.5rem; background: var(--orange-gradient);">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        سجل في التعليم الحضوري
+                    </a>
+                </div>
+
+                <!-- الصفوف من التاسع إلى الثاني عشر -->
+                <div class="offer-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <h3 style="color: white; margin-bottom: 1rem; font-size: 1.6rem;">الصفوف من التاسع إلى الثاني عشر</h3>
+                    
+                    <div class="price" style="font-size: 1.8rem; font-weight: 800; color: var(--secondary); margin: 1.5rem 0;">
+                        <span style="font-size: 2rem;">50 ريال</span>
+                        <span style="font-size: 1rem; color: rgba(255,255,255,0.7); display: block;">سعر المادة الواحدة</span>
+                        <span style="font-size: 1.5rem; color: var(--gold);">باقة مادتين: 90 ريال</span>
+                    </div>
+                    
+                    <div class="material-list">
+                        <h4 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">المواد المتاحة:</h4>
+                        <li><i class="fas fa-calculator"></i> الرياضيات</li>
+                        <li><i class="fas fa-atom"></i> الفيزياء</li>
+                        <li><i class="fas fa-flask"></i> الكيمياء</li>
+                        <li><i class="fas fa-language"></i> اللغة الإنجليزية</li>
+                        <li><i class="fas fa-book"></i> اللغة العربية</li>
+                    </div>
+                    
+                    <div style="background: rgba(255, 138, 60, 0.1); padding: 1rem; border-radius: var(--radius-sm); margin: 1rem 0; border-right: 3px solid var(--secondary);">
+                        <i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-left: 0.5rem;"></i>
+                        <strong>المقر:</strong> مدرسة سوار العلم الخاصة
+                    </div>
+                    
+                    <div style="background: rgba(255, 215, 0, 0.1); padding: 1rem; border-radius: var(--radius-sm); margin: 1rem 0; border-right: 3px solid var(--gold);">
+                        <i class="fas fa-exclamation-circle" style="color: var(--gold); margin-left: 0.5rem;"></i>
+                        <strong>عدد المقاعد محدود</strong> لضمان جودة التعليم والمتابعة الفردية
+                    </div>
+                    
+                    <a href="#register" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+                        <i class="fas fa-user-check"></i>
+                        احجز مقعدك الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المميزات -->
+    <section id="features" style="background: rgba(15, 12, 41, 0.5);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">لماذا تختارنا؟</div>
+                <h2 class="section-title">مميزات أكاديمية ملهم</h2>
+                <p class="section-subtitle">نقدم لطلابنا تجربة تعليمية فريدة تجمع بين الجودة العالية والمرونة في التعلم</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 1rem;">فريق تعليمي متميز</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">نخبة من أفضل المعلمين المؤهلين والمتميزين في تخصصاتهم، يتم اختيارهم بعناية فائقة.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 1rem;">تعلم مرن</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">خيارات متعددة للتعلم تناسب جميع الاحتياجات: حضوري مباشر أو أونلاين عن بُعد.</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 style="color: white; margin-bottom: 1rem;">أسعار مناسبة</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8);">أسعارنا تنافسية مع عروض وباقات تشجع الطلبة الجادين على الاستمرار في التعلم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نموذج التسجيل -->
+    <section id="register" style="background: rgba(15, 12, 41, 0.7);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">التسجيل متاح الآن</div>
+                <h2 class="section-title">سجل في أكاديمية ملهم التعليمية</h2>
+                <p class="section-subtitle">
+                    اختر النظام التعليمي المناسب (عن بعد أو حضوري)، ثم أكمِل التحويل على رقم الأكاديمية
+                    <strong>74120010</strong>، وبعدها يتم إرسال بيانات التسجيل عبر واتساب.
+                </p>
+            </div>
+
+            <div class="form-wrapper" data-aos="fade-up">
+                <form id="registrationForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="studentName">اسم الطالب</label>
+                            <input type="text" id="studentName" name="studentName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="grade">الصف الدراسي</label>
+                            <select id="grade" name="grade" required>
+                                <option value="">اختر الصف الدراسي</option>
+                                <option value="الصف الخامس">الصف الخامس</option>
+                                <option value="الصف السادس">الصف السادس</option>
+                                <option value="الصف السابع">الصف السابع</option>
+                                <option value="الصف الثامن">الصف الثامن</option>
+                                <option value="الصف التاسع">الصف التاسع</option>
+                                <option value="الصف العاشر">الصف العاشر</option>
+                                <option value="الصف الحادي عشر">الصف الحادي عشر</option>
+                                <option value="الصف الثاني عشر">الصف الثاني عشر</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guardianName">اسم ولي الأمر</label>
+                            <input type="text" id="guardianName" name="guardianName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="guardianPhone">رقم ولي الأمر (واتساب)</label>
+                            <input type="tel" id="guardianPhone" name="guardianPhone" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="educationType">نوع التعليم</label>
+                            <select id="educationType" name="educationType" required>
+                                <option value="">اختر نوع التعليم</option>
+                                <option value="تعليم عن بعد">تعليم عن بعد (الفصل الدراسي الكامل)</option>
+                                <option value="تعليم مباشر حضوري">تعليم مباشر حضوري</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="package">اختر الباقة</label>
+                            <select id="package" name="package" required>
+                                <option value="">اختر الباقة المناسبة</option>
+                                <!-- خيارات التعليم عن بعد -->
+                                <optgroup label="التعليم عن بعد - فصل دراسي كامل">
+                                    <option value="مادة واحدة - 14 ريال">مادة واحدة - 14 ريال (للصفوف 5-8)</option>
+                                    <option value="باقة 4 مواد - 45 ريال">باقة 4 مواد - 45 ريال (للصفوف 5-8)</option>
+                                    <option value="مادة واحدة - 18 ريال">مادة واحدة - 18 ريال (للصفوف 9-11)</option>
+                                    <option value="باقة 4 مواد - 65 ريال">باقة 4 مواد - 65 ريال (للصفوف 9-11)</option>
+                                    <option value="باقة جميع المواد - 90 ريال">باقة جميع المواد - 90 ريال (للصفوف 9-11)</option>
+                                    <option value="مادة واحدة - 20 ريال">مادة واحدة - 20 ريال (الصف 12)</option>
+                                    <option value="باقة 4 مواد - 70 ريال">باقة 4 مواد - 70 ريال (الصف 12)</option>
+                                    <option value="باقة جميع المواد - 100 ريال">باقة جميع المواد - 100 ريال (الصف 12)</option>
+                                </optgroup>
+                                <!-- خيارات التعليم الحضوري -->
+                                <optgroup label="التعليم المباشر الحضوري">
+                                    <option value="مادة واحدة - 40 ريال">مادة واحدة - 40 ريال (للصفوف 5-8)</option>
+                                    <option value="باقة 3 مواد - 100 ريال">باقة 3 مواد - 100 ريال (للصفوف 5-8)</option>
+                                    <option value="مادة واحدة - 50 ريال">مادة واحدة - 50 ريال (للصفوف 9-12)</option>
+                                    <option value="باقة مادتين - 90 ريال">باقة مادتين - 90 ريال (للصفوف 9-12)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">المادة/المواد</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">اختر المادة</option>
+                                <optgroup label="المواد الأساسية">
+                                    <option value="الرياضيات">الرياضيات</option>
+                                    <option value="اللغة العربية">اللغة العربية</option>
+                                    <option value="اللغة الإنجليزية">اللغة الإنجليزية</option>
+                                </optgroup>
+                                <optgroup label="المواد العلمية">
+                                    <option value="العلوم">العلوم</option>
+                                    <option value="الفيزياء">الفيزياء</option>
+                                    <option value="الكيمياء">الكيمياء</option>
+                                    <option value="الأحياء">الأحياء</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">ملاحظات إضافية (اختياري)</label>
+                            <textarea id="notes" name="notes" placeholder="أي تفاصيل خاصة بمستوى الطالب أو طلبات خاصة…"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-footer">
+                        <div class="note-transfer">
+                            <i class="fas fa-credit-card"></i> <strong>خطوة الدفع:</strong><br>
+                            الرجاء تحويل الرسوم على رقم الأكاديمية
+                            <strong>74120010</strong> (حسب الباقة المختارة)،
+                            ثم الضغط على الزر بالأسفل لفتح واتساب وإرسال بيانات التسجيل
+                            مع <strong>إرفاق إشعار التحويل</strong>.
+                            
+                            <div style="margin-top: 1rem; padding: 0.8rem; background: rgba(106, 45, 243, 0.1); border-radius: var(--radius-sm);">
+                                <i class="fas fa-clock" style="color: var(--accent); margin-left: 0.5rem;"></i>
+                                <strong>الأولوية للمسجلين مبكرًا لضمان المقاعد</strong>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> إكمال التسجيل عبر واتساب
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- الأسئلة الشائعة -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <div class="section-badge">الدعم والمساعدة</div>
+                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <p class="section-subtitle">إجابات على أكثر الأسئلة التي تهم أولياء الأمور والطلاب</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        كيف يمكنني التسجيل في الأكاديمية؟
+                    </div>
+                    <div class="faq-answer">
+                        يمكنك التسجيل من خلال تعبئة نموذج التسجيل الموجود على الموقع، ثم إكمال عملية الدفع عبر التحويل البنكي إلى رقم الأكاديمية 74120010، وأخيراً إرسال بيانات التسجيل وإشعار التحويل عبر واتساب.
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        ما الفرق بين التعليم عن بعد والتعليم الحضوري؟
+                    </div>
+                    <div class="faq-answer">
+                        التعليم عن بعد هو فصل دراسي كامل عبر الإنترنت مع باقات أسعار محددة للمواد، بينما التعليم الحضوري يتم في قاعات الأكاديمية مع معلمين مباشرين ويهدف للتركيز العميق على المواد الأساسية.
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
+                        هل يمكنني التسجيل في أكثر من مادة؟
+                    </div>
+                    <div class="faq-answer">
+                        نعم، يمكنك التسجيل في باقات متعددة المواد بأسعار مخفضة. مثلاً باقة 4 مواد في التعليم عن بعد للصفوف 5-8 بسعر 45 ريال بدلاً من 56 ريال إذا تم تسجيل كل مادة على حدة.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-wrap">
+                        <div class="logo-orb" style="width: 60px; height: 60px;">
+                            <img src="https://b.top4top.io/p_3619a8p161.png" alt="شعار أكاديمية ملهم التعليمية">
+                        </div>
+                        <div class="logo-text">
+                            <div class="logo-main">أكاديمية ملهم</div>
+                            <div class="logo-sub">منارة العلم والإبداع</div>
+                        </div>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+                        نؤمن بأن كل طالب يحمل بداخله عالماً من الإمكانات، ومهمتنا هي مساعدته على اكتشاف هذا العالم وصنع مستقبله
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/mulnimacademy" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/96874120010" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.3rem;">روابط سريعة</h4>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.8);">
+                        <li style="padding: 0.5rem 0;"><a href="#about" style="color: inherit; text-decoration: none;">عن الأكاديمية</a></li>
+                        <li style="padding: 0.5rem 0;"><a href="#online" style="color: inherit; text-decoration: none;">التعليم عن بعد</a></li>
+                        <li style="padding: 0.5rem 0;"><a href="#onsite" style="color: inherit; text-decoration: none;">التعليم المباشر</a></li>
+                        <li style="padding: 0.5rem 0;"><a href="#register" style="color: inherit; text-decoration: none;">تسجيل طالب</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.3rem;">اتصل بنا</h4>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.8);">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-phone" style="color: var(--accent);"></i>
+                            74120010
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-whatsapp" style="color: var(--accent);"></i>
+                            74120010
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-instagram" style="color: var(--accent);"></i>
+                            mulnimacademy
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i>
+                            سلطنة عمان، محافظة الداخلية
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.3rem;">ساعات العمل</h4>
+                    <ul style="list-style: none; color: rgba(255, 255, 255, 0.8);">
+                        <li style="padding: 0.5rem 0;">
+                            <i class="fas fa-clock" style="color: var(--accent); margin-left: 0.5rem;"></i>
+                            الأحد - الخميس: 8 صباحًا - 9 مساءً
+                        </li>
+                        <li style="padding: 0.5rem 0;">
+                            <i class="fas fa-clock" style="color: var(--accent); margin-left: 0.5rem;"></i>
+                            الجمعة - السبت: 4 عصرًا - 9 مساءً
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="color: rgba(255, 255, 255, 0.6);">
+                    &copy; 2024 أكاديمية ملهم التعليمية. جميع الحقوق محفوظة.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; margin-top: 0.5rem;">
+                    تصميم وتطوير: فريق أكاديمية ملهم التعليمية
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // تهيئة AOS للحركات
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // تأثير الجسيمات
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+
+        // إنشاء النجوم
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 200;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // تأثير التمرير على الهيدر
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // إرسال البيانات إلى واتساب
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const studentName   = document.getElementById('studentName').value.trim();
+            const grade         = document.getElementById('grade').value;
+            const guardianName  = document.getElementById('guardianName').value.trim();
+            const guardianPhone = document.getElementById('guardianPhone').value.trim();
+            const educationType = document.getElementById('educationType').value;
+            const pkg           = document.getElementById('package').value;
+            const subject       = document.getElementById('subject').value;
+            const notes         = document.getElementById('notes').value.trim();
+
+            const phone = "96874120010";
+
+            let message = `السلام عليكم ورحمة الله وبركاته 👋\nأرغب في التسجيل في أكاديمية ملهم التعليمية:\n\n`;
+            message += `👤 اسم الطالب: ${studentName}\n`;
+            message += `📚 الصف الدراسي: ${grade}\n`;
+            message += `👨‍👩‍👦 اسم ولي الأمر: ${guardianName}\n`;
+            message += `📱 رقم ولي الأمر (واتساب): ${guardianPhone}\n\n`;
+            message += `🎓 نوع التعليم: ${educationType}\n`;
+            message += `📦 الباقة المختارة: ${pkg}\n`;
+            message += `📘 المادة/المواد: ${subject}\n\n`;
+            message += `💳 تم التحويل على رقم 74120010، وسيتم إرفاق إشعار التحويل.\n`;
+
+            if (notes) {
+                message += `\nملاحظات إضافية:\n${notes}\n`;
+            }
+
+            message += `\n────────────────────\n`;
+            message += `📅 تاريخ التسجيل: ${new Date().toLocaleDateString('ar-SA')}\n`;
+            message += `🕒 وقت التسجيل: ${new Date().toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' })}\n`;
+
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        });
+
+        // قائمة الجوال
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // إغلاق القائمة عند النقر على رابط
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+
+        // تحديث الباقات بناءً على نوع التعليم المختار
+        document.getElementById('educationType').addEventListener('change', function() {
+            const packageSelect = document.getElementById('package');
+            const selectedValue = packageSelect.value;
+            
+            // حفظ القيمة المختارة
+            const currentValue = packageSelect.value;
+            
+            // مسح الخيارات الحالية
+            packageSelect.innerHTML = '<option value="">اختر الباقة المناسبة</option>';
+            
+            if (this.value === 'تعليم عن بعد') {
+                // خيارات التعليم عن بعد
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = 'التعليم عن بعد - فصل دراسي كامل';
+                
+                const options = [
+                    'مادة واحدة - 14 ريال (للصفوف 5-8)',
+                    'باقة 4 مواد - 45 ريال (للصفوف 5-8)',
+                    'مادة واحدة - 18 ريال (للصفوف 9-11)',
+                    'باقة 4 مواد - 65 ريال (للصفوف 9-11)',
+                    'باقة جميع المواد - 90 ريال (للصفوف 9-11)',
+                    'مادة واحدة - 20 ريال (الصف 12)',
+                    'باقة 4 مواد - 70 ريال (الصف 12)',
+                    'باقة جميع المواد - 100 ريال (الصف 12)'
+                ];
+                
+                options.forEach(optionText => {
+                    const option = document.createElement('option');
+                    option.value = optionText;
+                    option.textContent = optionText;
+                    optgroup.appendChild(option);
+                });
+                
+                packageSelect.appendChild(optgroup);
+            } else if (this.value === 'تعليم مباشر حضوري') {
+                // خيارات التعليم الحضوري
+                const optgroup = document.createElement('optgroup');
+                optgroup.label = 'التعليم المباشر الحضوري';
+                
+                const options = [
+                    'مادة واحدة - 40 ريال (للصفوف 5-8)',
+                    'باقة 3 مواد - 100 ريال (للصفوف 5-8)',
+                    'مادة واحدة - 50 ريال (للصفوف 9-12)',
+                    'باقة مادتين - 90 ريال (للصفوف 9-12)'
+                ];
+                
+                options.forEach(optionText => {
+                    const option = document.createElement('option');
+                    option.value = optionText;
+                    option.textContent = optionText;
+                    optgroup.appendChild(option);
+                });
+                
+                packageSelect.appendChild(optgroup);
+            }
+            
+            // محاولة استعادة القيمة المختارة
+            if (selectedValue) {
+                packageSelect.value = selectedValue;
+            }
+        });
+
+        // تهيئة الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            
+            // إضافة تأثيرات للبطاقات عند التمرير
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+            
+            // مراقبة جميع البطاقات
+            document.querySelectorAll('.feature-card, .offer-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+
+        // تأثير التأرجح للأزرار
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // إضافة التاريخ والوقت الحاليين في نموذج التسجيل
+        const now = new Date();
+        const registrationDate = document.createElement('input');
+        registrationDate.type = 'hidden';
+        registrationDate.name = 'registrationDateTime';
+        registrationDate.value = now.toISOString();
+        document.getElementById('registrationForm').appendChild(registrationDate);
+
+        // تأثيرات صوتية خفيفة (اختياري)
+        const playClickSound = () => {
+            // يمكن إضافة صوت نقر خفيف هنا إذا رغبت
+            console.log('تم النقر على زر التسجيل');
+        };
+
+        // إضافة مؤثر صوتي لأزرار التسجيل
+        document.querySelectorAll('.btn-primary, .btn-glow').forEach(button => {
+            button.addEventListener('click', playClickSound);
+        });
+    </script>
+</body>
+</html>
     <style>
         :root {
             --primary: #6a2df3;
@@ -1772,3 +3719,4 @@
     </script>
 </body>
 </html>
+
