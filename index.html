@@ -913,6 +913,7 @@
             text-align: center;
             cursor: pointer;
             transition: var(--transition);
+            position: relative;
         }
         
         .material-item:hover {
@@ -925,6 +926,13 @@
             background: rgba(34, 184, 170, 0.2);
             border-color: var(--accent);
             box-shadow: 0 0 15px rgba(34, 184, 170, 0.3);
+        }
+        
+        .material-item .material-price {
+            font-size: 0.8rem;
+            color: var(--gold);
+            margin-top: 0.5rem;
+            font-weight: 600;
         }
         
         /* ===== ملخص التسجيل ===== */
@@ -1321,6 +1329,10 @@
             .stepper-line {
                 display: none;
             }
+            
+            .material-selection {
+                grid-template-columns: 1fr;
+            }
         }
         
         /* رسائل تنبيه خاصة */
@@ -1430,7 +1442,7 @@
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0;">
                                 <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: var(--radius-sm);">
                                     <h4 style="color: var(--primary-light); margin-bottom: 0.5rem;">التعليم عن بعد</h4>
-                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">أسعار مناسبة للجميع</p>
+                                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.9rem;">اختر المواد التي تحتاجها</p>
                                 </div>
                                 <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: var(--radius-sm);">
                                     <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">التعليم الحضوري</h4>
@@ -1520,7 +1532,7 @@
                         </div>
                         <div style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">
                             <i class="fas fa-shopping-bag" style="color: #22b8aa; margin-left: 0.3rem;"></i>
-                            <span>توفير 3 ريال عند اختيار الباقة</span>
+                            <span>توفير 4 ريال عند اختيار الباقة</span>
                         </div>
                     </div>
                     
@@ -1669,7 +1681,7 @@
                     <div class="price" style="font-size: 1.8rem; font-weight: 800; color: var(--accent); margin: 1.5rem 0;">
                         <span style="font-size: 2rem;">خصم 20%</span>
                         <span style="font-size: 1rem; color: rgba(255,255,255,0.7); display: block;">عند التسجيل في النظامين معاً</span>
-                        <span style="font-size: 1.5rem; color: var(--gold);">تطبق على باقات متعددة المواد</span>
+                        <span style="font-size: 1.5rem; color: var(--gold);">تطبق على جميع المواد المختارة</span>
                     </div>
                     
                     <div class="combo-details">
@@ -1779,7 +1791,7 @@
                                 فصل دراسي كامل عبر الإنترنت
                             </p>
                             <div style="margin-top: 1rem; padding: 0.5rem; background: rgba(106, 45, 243, 0.1); border-radius: 6px;">
-                                <small>أسعار مميزة للباقات</small>
+                                <small>اختر المواد التي تحتاجها</small>
                             </div>
                         </div>
                         <div class="grade-option" data-education-type="onsite">
@@ -1789,7 +1801,7 @@
                                 حضور مباشر في القاعات الدراسية
                             </p>
                             <div style="margin-top: 1rem; padding: 0.5rem; background: rgba(255, 138, 60, 0.1); border-radius: 6px;">
-                                <small>تفاعل مباشر مع المعلمين</small>
+                                <small>اختر المواد التي تحتاجها</small>
                             </div>
                         </div>
                         <div class="grade-option" data-education-type="combo">
@@ -1837,17 +1849,40 @@
                         <!-- المواد للنظامين معًا ستظهر هنا ديناميكيًا -->
                     </div>
                     
-                    <!-- خيارات الباقات -->
+                    <!-- خيارات الباقات (متاحة فقط عندما تكون جميع المواد متاحة للصف) -->
                     <div id="packageOptions" style="margin-top: 2rem; display: none;">
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                            <label for="packageSelect" style="display: block; margin-bottom: 0; font-size: 1.1rem; flex: 1;">اختر الباقة المناسبة:</label>
+                            <label for="packageSelect" style="display: block; margin-bottom: 0; font-size: 1.1rem; flex: 1;">اختر الباقة المناسبة أو استمر باختيار المواد:</label>
                             <span id="packageSavings" style="display: none; padding: 0.3rem 0.8rem; background: rgba(34, 184, 170, 0.2); border-radius: 6px; color: var(--accent); font-weight: 600; font-size: 0.9rem;">
                                 <i class="fas fa-piggy-bank"></i> توفير: <span id="savingsAmount">0</span> ريال
                             </span>
                         </div>
                         <select id="packageSelect" name="packageSelect" style="width: 100%; padding: 1rem; border-radius: var(--radius-sm); background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid rgba(255, 255, 255, 0.2);">
-                            <option value="">اختر الباقة</option>
+                            <option value="">اختر الباقة (اختياري)</option>
                         </select>
+                        <div style="text-align: center; margin-top: 0.5rem;">
+                            <small style="color: rgba(255, 255, 255, 0.6);">يمكنك اختيار المواد بشكل فردي أو اختيار إحدى الباقات</small>
+                        </div>
+                    </div>
+                    
+                    <!-- ملخص المواد المختارة والسعر -->
+                    <div id="materialSummary" style="display: none; margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: var(--radius-sm); border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <h4 style="color: white; margin-bottom: 1rem; font-size: 1.2rem;">
+                            <i class="fas fa-receipt"></i> ملخص المواد المختارة
+                        </h4>
+                        <div id="selectedMaterialsList" style="margin-bottom: 1rem;">
+                            <!-- قائمة المواد المختارة ستظهر هنا -->
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div>
+                                <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.3rem;">عدد المواد المختارة:</p>
+                                <p id="selectedCount" style="color: white; font-weight: 600; font-size: 1.2rem;">0</p>
+                            </div>
+                            <div>
+                                <p style="color: rgba(255,255,255,0.8); margin-bottom: 0.3rem;">المبلغ الإجمالي:</p>
+                                <p id="totalPrice" style="color: var(--gold); font-weight: 800; font-size: 1.5rem;">0 ريال</p>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- حساب الخصم للنظام المدمج -->
@@ -1964,6 +1999,16 @@
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
+                        هل يمكنني اختيار مادتين أو ثلاث مواد فقط؟
+                    </div>
+                    <div class="faq-answer">
+                        نعم، يمكنك اختيار أي عدد من المواد التي تحتاجها (مادة واحدة، مادتين، ثلاث مواد، إلخ). النظام يتيح لك اختيار المواد بشكل فردي مع حساب السعر الإجمالي تلقائياً.
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="faq-question">
+                        <i class="fas fa-question-circle"></i>
                         ما هو خصم النظام المدمج؟
                     </div>
                     <div class="faq-answer">
@@ -1971,7 +2016,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
                         كيف يتم عملية التسجيل؟
@@ -1981,7 +2026,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
                         كيف ومتى يتم الدفع؟
@@ -1991,17 +2036,17 @@
                     </div>
                 </div>
                 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
                         هل يمكنني التسجيل في أكثر من مادة؟
                     </div>
                     <div class="faq-answer">
-                        نعم، يمكنك التسجيل في باقات متعددة المواد بأسعار مخفضة. نظامنا يسمح لك باختيار المواد التي تحتاجها.
+                        نعم، يمكنك التسجيل في أي عدد من المواد تريده. يمكنك اختيار المواد بشكل فردي أو اختيار إحدى الباقات المتاحة بأسعار مخفضة.
                     </div>
                 </div>
                 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="700">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="800">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
                         هل يمكنني الجمع بين التعليم عن بعد والحضوري؟
@@ -2011,7 +2056,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item" data-aos="fade-up" data-aos-delay="800">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="900">
                     <div class="faq-question">
                         <i class="fas fa-question-circle"></i>
                         كيف يمكنني التواصل مع الأكاديمية؟
@@ -2236,42 +2281,69 @@
         // المواد المتاحة حسب الصف ونوع التعليم
         const availableMaterials = {
             online: {
-                '5-8': ['اللغة العربية', 'اللغة الإنجليزية', 'الرياضيات', 'العلوم'],
-                '9-11': ['اللغة العربية', 'اللغة الإنجليزية', 'الرياضيات', 'الفيزياء', 'الكيمياء', 'الأحياء'],
-                '12': ['اللغة العربية', 'اللغة الإنجليزية', 'الرياضيات', 'الفيزياء', 'الكيمياء', 'الأحياء']
-            },
-            onsite: {
-                '5-8': ['الرياضيات', 'اللغة العربية', 'اللغة الإنجليزية'],
-                '9-12': ['رياضيات متقدمة', 'رياضيات أساسية', 'الفيزياء', 'الكيمياء', 'اللغة الإنجليزية']
-            }
-        };
-
-        // الباقات المتاحة
-        const packages = {
-            online: {
                 '5-8': [
-                    {name: `مادة واحدة - ${onlinePrices['5-8'].single} ريال`, value: 'single', price: onlinePrices['5-8'].single},
-                    {name: `باقة 4 مواد - ${onlinePrices['5-8'].package4} ريال`, value: 'package4', price: onlinePrices['5-8'].package4}
+                    {name: 'اللغة العربية', price: 11},
+                    {name: 'اللغة الإنجليزية', price: 11},
+                    {name: 'الرياضيات', price: 11},
+                    {name: 'العلوم', price: 11}
                 ],
                 '9-11': [
-                    {name: `مادة واحدة - ${onlinePrices['9-11'].single} ريال`, value: 'single', price: onlinePrices['9-11'].single},
-                    {name: `باقة 4 مواد - ${onlinePrices['9-11'].package4} ريال`, value: 'package4', price: onlinePrices['9-11'].package4},
-                    {name: `باقة جميع المواد - ${onlinePrices['9-11'].all} ريال`, value: 'all', price: onlinePrices['9-11'].all}
+                    {name: 'اللغة العربية', price: 15},
+                    {name: 'اللغة الإنجليزية', price: 15},
+                    {name: 'الرياضيات', price: 15},
+                    {name: 'الرياضيات المتقدمة للصف 11', price: 15},
+                    {name: 'الرياضيات الأساسية للصف 11', price: 15},
+                    {name: 'الفيزياء', price: 15},
+                    {name: 'الكيمياء', price: 15},
+                    {name: 'الأحياء', price: 15}
                 ],
                 '12': [
-                    {name: `مادة واحدة - ${onlinePrices['12'].single} ريال`, value: 'single', price: onlinePrices['12'].single},
-                    {name: `باقة 4 مواد - ${onlinePrices['12'].package4} ريال`, value: 'package4', price: onlinePrices['12'].package4},
-                    {name: `باقة جميع المواد - ${onlinePrices['12'].all} ريال`, value: 'all', price: onlinePrices['12'].all}
+                    {name: 'اللغة العربية', price: 17},
+                    {name: 'اللغة الإنجليزية', price: 17},
+                    {name: 'الرياضيات المتقدمة', price: 17},
+                    {name: 'الرياضيات الأساسية', price: 17},
+                    {name: 'الفيزياء', price: 17},
+                    {name: 'الكيمياء', price: 17},
+                    {name: 'الأحياء', price: 17}
                 ]
             },
             onsite: {
                 '5-8': [
-                    {name: 'مادة واحدة - 35 ريال', value: 'single', price: 35},
-                    {name: 'باقة 3 مواد - 100 ريال', value: 'package3', price: 100}
+                    {name: 'الرياضيات', price: 35},
+                    {name: 'اللغة العربية', price: 35},
+                    {name: 'اللغة الإنجليزية', price: 35}
                 ],
                 '9-12': [
-                    {name: 'مادة واحدة - 50 ريال', value: 'single', price: 50},
-                    {name: 'باقة 3 مواد - 130 ريال', value: 'package3', price: 130}
+                    {name: 'رياضيات متقدمة', price: 50},
+                    {name: 'رياضيات أساسية', price: 50},
+                    {name: 'الفيزياء', price: 50},
+                    {name: 'الكيمياء', price: 50},
+                    {name: 'اللغة الإنجليزية', price: 50}
+                ]
+            }
+        };
+
+        // الباقات المتاحة (اختيارية)
+        const packages = {
+            online: {
+                '5-8': [
+                    {name: `باقة 4 مواد - 40 ريال (توفير 4 ريال)`, value: 'package4', price: 40}
+                ],
+                '9-11': [
+                    {name: `باقة 4 مواد - 60 ريال (توفير)`, value: 'package4', price: 60},
+                    {name: `باقة جميع المواد - 80 ريال (توفير)`, value: 'all', price: 80}
+                ],
+                '12': [
+                    {name: `باقة 4 مواد - 65 ريال (توفير)`, value: 'package4', price: 65},
+                    {name: `باقة جميع المواد - 85 ريال (توفير)`, value: 'all', price: 85}
+                ]
+            },
+            onsite: {
+                '5-8': [
+                    {name: 'باقة 3 مواد - 100 ريال (توفير 5 ريال)', value: 'package3', price: 100}
+                ],
+                '9-12': [
+                    {name: 'باقة 3 مواد - 130 ريال (توفير 20 ريال)', value: 'package3', price: 130}
                 ]
             }
         };
@@ -2326,12 +2398,7 @@
                     break;
                 case 3:
                     isValid = registrationData.selectedMaterials.length > 0;
-                    if (registrationData.educationType !== 'combo') {
-                        isValid = isValid && registrationData.package !== '';
-                    } else {
-                        // للنظام المدمج، يجب التحقق من اختيار مواد من كلا النظامين إذا أراد الخصم
-                        isValid = isValid && checkComboRequirement();
-                    }
+                    // إلغاء شرط الباقة، يكفي اختيار مادة واحدة على الأقل
                     break;
             }
             
@@ -2401,19 +2468,23 @@
                 const comboDiscountInfo = document.getElementById('comboDiscountInfo');
                 const comboRequirementAlert = document.getElementById('comboRequirementAlert');
                 const comboDiscountCalc = document.getElementById('comboDiscountCalc');
+                const materialSummary = document.getElementById('materialSummary');
                 
                 if (registrationData.educationType === 'combo') {
                     comboDiscountInfo.style.display = 'block';
                     comboRequirementAlert.style.display = 'none'; // سيتم إظهاره عند اختيار المواد
                     comboDiscountCalc.style.display = 'none';
-                } else if (registrationData.educationType === 'online') {
+                    if (materialSummary) materialSummary.style.display = 'none';
+                } else if (registrationData.educationType === 'online' || registrationData.educationType === 'onsite') {
                     comboDiscountInfo.style.display = 'none';
                     comboRequirementAlert.style.display = 'none';
                     comboDiscountCalc.style.display = 'none';
+                    if (materialSummary) materialSummary.style.display = 'none';
                 } else {
                     comboDiscountInfo.style.display = 'none';
                     comboRequirementAlert.style.display = 'none';
                     comboDiscountCalc.style.display = 'none';
+                    if (materialSummary) materialSummary.style.display = 'none';
                 }
                 
                 validateStep();
@@ -2452,6 +2523,7 @@
             document.getElementById('comboMaterials').style.display = 'none';
             document.getElementById('packageOptions').style.display = 'none';
             document.getElementById('comboDiscountCalc').style.display = 'none';
+            document.getElementById('materialSummary').style.display = 'none';
             
             if (educationType === 'combo') {
                 // عرض خيارات للنظامين معًا
@@ -2478,14 +2550,19 @@
                 materials.forEach(material => {
                     const materialDiv = document.createElement('div');
                     materialDiv.className = 'material-item';
-                    materialDiv.textContent = material;
-                    materialDiv.dataset.material = material;
+                    materialDiv.innerHTML = `
+                        <div>${material.name}</div>
+                        <div class="material-price">${material.price} ريال</div>
+                    `;
+                    materialDiv.dataset.material = material.name;
+                    materialDiv.dataset.price = material.price;
                     
                     materialDiv.addEventListener('click', function() {
                         this.classList.toggle('selected');
                         updateSelectedMaterials();
                         if (educationType !== 'combo') {
                             updatePackageSavings();
+                            updateMaterialSummary();
                         } else {
                             updateComboDiscount();
                         }
@@ -2494,10 +2571,11 @@
                     container.appendChild(materialDiv);
                 });
                 
-                // تحميل الباقات
+                // تحميل الباقات (اختيارية)
                 loadPackages(educationType, gradeGroup);
             }
             
+            // إعادة تعيين البيانات
             registrationData.selectedMaterials = [];
             registrationData.package = '';
             registrationData.discountApplied = 0;
@@ -2523,8 +2601,12 @@
             onlineMaterials.forEach(material => {
                 const materialDiv = document.createElement('div');
                 materialDiv.className = 'material-item';
-                materialDiv.textContent = `${material} (أونلاين)`;
-                materialDiv.dataset.material = material;
+                materialDiv.innerHTML = `
+                    <div>${material.name} (أونلاين)</div>
+                    <div class="material-price">${material.price} ريال</div>
+                `;
+                materialDiv.dataset.material = material.name;
+                materialDiv.dataset.price = material.price;
                 materialDiv.dataset.type = 'online';
                 
                 materialDiv.addEventListener('click', function() {
@@ -2546,8 +2628,12 @@
             onsiteMaterials.forEach(material => {
                 const materialDiv = document.createElement('div');
                 materialDiv.className = 'material-item';
-                materialDiv.textContent = `${material} (حضوري)`;
-                materialDiv.dataset.material = material;
+                materialDiv.innerHTML = `
+                    <div>${material.name} (حضوري)</div>
+                    <div class="material-price">${material.price} ريال</div>
+                `;
+                materialDiv.dataset.material = material.name;
+                materialDiv.dataset.price = material.price;
                 materialDiv.dataset.type = 'onsite';
                 
                 materialDiv.addEventListener('click', function() {
@@ -2590,17 +2676,55 @@
                 const selectedItems = document.querySelectorAll('#comboMaterials .material-item.selected');
                 registrationData.selectedMaterials = Array.from(selectedItems).map(item => ({
                     name: item.dataset.material,
+                    price: parseFloat(item.dataset.price),
                     type: item.dataset.type
                 }));
             } else {
                 const selectedItems = document.querySelectorAll(`#${educationType}Materials .material-item.selected`);
                 registrationData.selectedMaterials = Array.from(selectedItems).map(item => ({
                     name: item.dataset.material,
+                    price: parseFloat(item.dataset.price),
                     type: educationType
                 }));
             }
             
             validateStep();
+        }
+
+        // تحديث ملخص المواد المختارة
+        function updateMaterialSummary() {
+            const materialSummary = document.getElementById('materialSummary');
+            const selectedList = document.getElementById('selectedMaterialsList');
+            const selectedCount = document.getElementById('selectedCount');
+            const totalPrice = document.getElementById('totalPrice');
+            
+            if (registrationData.selectedMaterials.length === 0) {
+                materialSummary.style.display = 'none';
+                return;
+            }
+            
+            materialSummary.style.display = 'block';
+            
+            // تحديث قائمة المواد المختارة
+            let listHTML = '';
+            let total = 0;
+            
+            registrationData.selectedMaterials.forEach((material, index) => {
+                listHTML += `
+                    <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <span>${index + 1}. ${material.name}</span>
+                        <span style="color: var(--gold); font-weight: 600;">${material.price} ريال</span>
+                    </div>
+                `;
+                total += material.price;
+            });
+            
+            selectedList.innerHTML = listHTML;
+            selectedCount.textContent = registrationData.selectedMaterials.length;
+            totalPrice.textContent = total + ' ريال';
+            
+            // تحديث المبلغ الإجمالي في بيانات التسجيل
+            registrationData.totalAmount = total;
         }
 
         // تحديث الخصم للنظام المدمج
@@ -2612,26 +2736,9 @@
             
             // حساب الإجمالي قبل الخصم
             registrationData.selectedMaterials.forEach(material => {
-                let price = 0;
-                
-                if (material.type === 'online') {
-                    onlineCount++;
-                    let gradeGroup = '';
-                    if (grade >= 5 && grade <= 8) gradeGroup = '5-8';
-                    else if (grade >= 9 && grade <= 11) gradeGroup = '9-11';
-                    else if (grade === 12) gradeGroup = '12';
-                    
-                    price = onlinePrices[gradeGroup].single;
-                } else if (material.type === 'onsite') {
-                    onsiteCount++;
-                    let gradeGroup = '';
-                    if (grade >= 5 && grade <= 8) gradeGroup = '5-8';
-                    else if (grade >= 9 && grade <= 12) gradeGroup = '9-12';
-                    
-                    price = onsitePrices[gradeGroup].single;
-                }
-                
-                totalBeforeDiscount += price;
+                totalBeforeDiscount += material.price;
+                if (material.type === 'online') onlineCount++;
+                if (material.type === 'onsite') onsiteCount++;
             });
             
             // التحقق من أهلية الخصم (يجب أن يكون هناك مواد من كلا النظامين)
@@ -2696,10 +2803,10 @@
             }
         }
 
-        // تحميل الباقات
+        // تحميل الباقات (اختيارية)
         function loadPackages(educationType, gradeGroup) {
             const packageSelect = document.getElementById('packageSelect');
-            packageSelect.innerHTML = '<option value="">اختر الباقة</option>';
+            packageSelect.innerHTML = '<option value="">اختر الباقة (اختياري)</option>';
             
             const availablePackages = packages[educationType][gradeGroup] || [];
             availablePackages.forEach(pkg => {
@@ -2710,7 +2817,12 @@
                 packageSelect.appendChild(option);
             });
             
-            document.getElementById('packageOptions').style.display = 'block';
+            // إظهار خيار الباقات فقط إذا كانت متاحة
+            if (availablePackages.length > 0) {
+                document.getElementById('packageOptions').style.display = 'block';
+            } else {
+                document.getElementById('packageOptions').style.display = 'none';
+            }
             
             packageSelect.addEventListener('change', function() {
                 registrationData.package = this.value;
@@ -2727,8 +2839,17 @@
             const packageSelect = document.getElementById('packageSelect');
             const selectedOption = packageSelect.options[packageSelect.selectedIndex];
             
-            if (!selectedOption || !selectedOption.dataset.price) {
+            if (!selectedOption || !selectedOption.dataset.price || selectedOption.value === '') {
                 document.getElementById('packageSavings').style.display = 'none';
+                
+                // إذا تم إلغاء اختيار الباقة، حساب السعر بناءً على المواد المختارة
+                if (registrationData.selectedMaterials.length > 0) {
+                    let total = 0;
+                    registrationData.selectedMaterials.forEach(material => {
+                        total += material.price;
+                    });
+                    registrationData.totalAmount = total;
+                }
                 return;
             }
             
@@ -2742,26 +2863,27 @@
                 else if (grade >= 9 && grade <= 12) gradeGroup = '9-12';
             }
             
-            const singlePrice = educationType === 'online' ? onlinePrices[gradeGroup].single : onsitePrices[gradeGroup].single;
             const packagePrice = parseFloat(selectedOption.dataset.price);
-            const materialsCountForPackage = selectedOption.value === 'package4' ? 4 : 
-                                          selectedOption.value === 'package3' ? 3 : 
-                                          selectedOption.value === 'all' ? 
-                                            (educationType === 'online' ? 
-                                                (gradeGroup === '5-8' ? 4 : 
-                                                 gradeGroup === '9-11' ? 7 : 6) : 
-                                                (gradeGroup === '5-8' ? 3 : 4)) : 
-                                          1;
             
-            const individualTotal = singlePrice * materialsCountForPackage;
+            // حساب السعر الإجمالي للمواد المختارة
+            let individualTotal = 0;
+            registrationData.selectedMaterials.forEach(material => {
+                individualTotal += material.price;
+            });
+            
             const savings = individualTotal - packagePrice;
             
             if (savings > 0) {
                 document.getElementById('savingsAmount').textContent = savings;
                 document.getElementById('packageSavings').style.display = 'block';
+                registrationData.totalAmount = packagePrice;
             } else {
                 document.getElementById('packageSavings').style.display = 'none';
+                registrationData.totalAmount = packagePrice;
             }
+            
+            // تحديث ملخص المواد
+            updateMaterialSummary();
         }
 
         // تحديث الملخص
@@ -2770,7 +2892,6 @@
             const grade = parseInt(registrationData.grade);
             const educationType = registrationData.educationType;
             
-            let total = 0;
             let summaryHTML = `
                 <div class="summary-item">
                     <span>اسم الطالب:</span>
@@ -2794,7 +2915,7 @@
                 </div>
             `;
             
-            if (educationType !== 'combo' && registrationData.package) {
+            if (registrationData.package) {
                 const packageSelect = document.getElementById('packageSelect');
                 const selectedOption = packageSelect.options[packageSelect.selectedIndex];
                 summaryHTML += `
@@ -2814,7 +2935,7 @@
                         summaryHTML += `
                             <div class="summary-item" style="padding-right: 2rem;">
                                 <span>• ${material.name} (${material.type === 'online' ? 'أونلاين' : 'حضوري'})</span>
-                                <span>${calculateMaterialPrice(material, grade)} ريال</span>
+                                <span>${material.price} ريال</span>
                             </div>
                         `;
                     });
@@ -2841,11 +2962,11 @@
                     }
                 } else {
                     // عرض المواد بدون تفاصيل الخصم
-                    registrationData.selectedMaterials.forEach(material => {
+                    registrationData.selectedMaterials.forEach((material, index) => {
                         summaryHTML += `
                             <div class="summary-item" style="padding-right: 2rem;">
                                 <span>• ${material.name}</span>
-                                <span>${calculateMaterialPrice(material, grade)} ريال</span>
+                                <span>${material.price} ريال</span>
                             </div>
                         `;
                     });
@@ -2862,28 +2983,6 @@
             summaryDiv.innerHTML = summaryHTML;
         }
 
-        // حساب سعر المادة
-        function calculateMaterialPrice(material, grade) {
-            const educationType = material.type || registrationData.educationType;
-            
-            if (educationType === 'online') {
-                let gradeGroup = '';
-                if (grade >= 5 && grade <= 8) gradeGroup = '5-8';
-                else if (grade >= 9 && grade <= 11) gradeGroup = '9-11';
-                else if (grade === 12) gradeGroup = '12';
-                
-                return onlinePrices[gradeGroup].single;
-            } else if (educationType === 'onsite') {
-                let gradeGroup = '';
-                if (grade >= 5 && grade <= 8) gradeGroup = '5-8';
-                else if (grade >= 9 && grade <= 12) gradeGroup = '9-12';
-                
-                return onsitePrices[gradeGroup].single;
-            }
-            
-            return 0;
-        }
-
         // رابط Google Apps Script
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8czWZhJ8sJpFiqDwJxySh4EzT1VT--zfJCz4kDVMwWqPY4dSsGA-do96qbyGLcyk/exec';
 
@@ -2898,34 +2997,22 @@
                 return;
             }
 
-            // حساب المبلغ الإجمالي للنظام غير المدمج
-            if (registrationData.educationType !== 'combo' && registrationData.package) {
-                const grade = parseInt(registrationData.grade);
-                let gradeGroup = '';
-                
-                if (registrationData.educationType === 'online') {
-                    if (grade >= 5 && grade <= 8) gradeGroup = '5-8';
-                    else if (grade >= 9 && grade <= 11) gradeGroup = '9-11';
-                    else if (grade === 12) gradeGroup = '12';
-                    
-                    if (registrationData.package === 'single') {
-                        registrationData.totalAmount = onlinePrices[gradeGroup].single;
-                    } else if (registrationData.package === 'package4') {
-                        registrationData.totalAmount = onlinePrices[gradeGroup].package4;
-                    } else if (registrationData.package === 'all') {
-                        registrationData.totalAmount = onlinePrices[gradeGroup].all;
-                    }
-                } else if (registrationData.educationType === 'onsite') {
-                    if (grade >= 5 && grade <= 8) gradeGroup = '5-8';
-                    else if (grade >= 9 && grade <= 12) gradeGroup = '9-12';
-                    
-                    if (registrationData.package === 'single') {
-                        registrationData.totalAmount = onsitePrices[gradeGroup].single;
-                    } else if (registrationData.package === 'package3') {
-                        registrationData.totalAmount = onsitePrices[gradeGroup].package3;
-                    }
+            // حساب المبلغ الإجمالي إذا تم اختيار باقة
+            if (registrationData.package) {
+                const packageSelect = document.getElementById('packageSelect');
+                const selectedOption = packageSelect.options[packageSelect.selectedIndex];
+                if (selectedOption && selectedOption.dataset.price) {
+                    registrationData.totalAmount = parseFloat(selectedOption.dataset.price);
                 }
+            } else if (registrationData.educationType !== 'combo') {
+                // حساب السعر بناءً على المواد المختارة
+                let total = 0;
+                registrationData.selectedMaterials.forEach(material => {
+                    total += material.price;
+                });
+                registrationData.totalAmount = total;
             }
+            // للنظام المدمج، totalAmount محسوب مسبقاً في updateComboDiscount
 
             // توليد رمز تسجيل فريد
             registrationData.registrationId = 'REG-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
@@ -3197,6 +3284,7 @@ ${!registrationData.discountEligible && registrationData.educationType === 'comb
             document.getElementById('comboDiscountInfo').style.display = 'none';
             document.getElementById('comboRequirementAlert').style.display = 'none';
             document.getElementById('comboDiscountCalc').style.display = 'none';
+            document.getElementById('materialSummary').style.display = 'none';
             
             // العودة إلى الخطوة الأولى
             currentStep = 1;
